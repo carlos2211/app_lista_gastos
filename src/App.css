@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+.lista-tareas {
+	list-style: none;
+	height: 100%;
+	overflow: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.lista-tareas__tarea {
+	height: 60px;
+	padding: 0 20px;
+	align-items: center;
+	color: #4B4B4B;
+	font-size: 18px;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.lista-tareas__texto {
+	text-align: left;
+	width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.lista-tareas__tarea:hover .lista-tareas__icono-accion {
+	opacity: 0.5;
 }
 
-.App-link {
-  color: #61dafb;
+.lista-tareas__tarea:nth-child(even) {
+	background: #F3F3F3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.lista-tareas__contenedor-botones {
+	display: flex;
+}
+
+.lista-tareas__icono {
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.lista-tareas__icono-check {
+	margin-right: 20px;
+	font-size: 26px;
+}
+
+.lista-tareas__icono-accion {
+	margin-left: 20px;
+	opacity: 0;
+	transition: .3s ease all;
+}
+
+.lista-tareas__mensaje {
+	text-align: center;
+	color: #b8b8b8;
+	font-size: 20px;
+	padding: 40px 20px;
 }

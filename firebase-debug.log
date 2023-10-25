@@ -1,0 +1,25 @@
+[debug] [2023-10-24T03:21:09.048Z] ----------------------------------------------------------------------
+[debug] [2023-10-24T03:21:09.052Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\carlos.orrego\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-10-24T03:21:09.053Z] CLI Version:   12.7.0
+[debug] [2023-10-24T03:21:09.053Z] Platform:      win32
+[debug] [2023-10-24T03:21:09.053Z] Node Version:  v20.8.1
+[debug] [2023-10-24T03:21:09.054Z] Time:          Tue Oct 24 2023 00:21:09 GMT-0300 (hora de verano de Chile)
+[debug] [2023-10-24T03:21:09.054Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-24T03:21:09.141Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-24T03:21:09.142Z] > authorizing via signed-in user (orrego.carlos22@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\carlos.orrego\OneDrive - Havas\Documents\curso_de_react\practicas\app_lista_gastos
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
