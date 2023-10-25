@@ -77,7 +77,7 @@ const ListaDeGastos = () => {
                         {gasto.descripcion}
                     </Descripcion>
                     <Valor>
-                      ${gasto.cantidad}
+                      {gasto.cantidad}
                     </Valor>
                     <ContenedorBotones>
                       <BotonAccion as={Link} to={`/editar/${gasto.id}`}>

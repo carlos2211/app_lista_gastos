@@ -6,3 +6,11 @@ const formatearCantidad = (cantidad) => {
 }
  
 export default formatearCantidad;
+
+export const formatMoney = (money) => {
+    console.log(money)
+   return money.toLocaleString('es-CL',{
+        style:"currency",
+        currency: "CLP"
+    })
+}

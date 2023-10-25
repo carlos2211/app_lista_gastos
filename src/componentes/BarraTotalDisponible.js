@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import theme from '../elementos/theme';
 import {useIngresos}  from '../contextos/totalIngresosContext';
 import {useTotalDelMes} from '../contextos/totalGastadoEnElMesContext';
+import useFormatLocalMoney from '../hooks/useFormatLocalMoney';
+
 
 const BarraTotal = styled.div`
     background: ${theme.amarillo};
@@ -27,18 +29,20 @@ const BarraTotalDisponible = () => {
     const tot = {total}.total;
     const  {total_in} = useIngresos(); 
     const totIn = {total_in}.total_in;
-    const resultado = totIn - tot ;
+    let resultado = totIn - tot ;
     
-
-  
-
-    // console.log('total_In:',{total_in});
-    // console.log('total :',{total});
+    if (resultado < 0) {
+        resultado = 0
+    } else {
+        resultado = resultado
+    }
+    
+    const {formatedMoney,formatedMoneyEUR} = useFormatLocalMoney(resultado)
 
     return ( 
         <BarraTotal>
             <p>Total Disponible:</p>
-            <p>${resultado}</p>
+            <p>{formatedMoney}</p>
         </BarraTotal>
      );
 }

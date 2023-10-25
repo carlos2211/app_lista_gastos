@@ -2,12 +2,15 @@ import {useState,useEffect} from 'react';
 import { db } from '../firebase/firebaseConfig';
 import { useAuth } from '../contextos/AuthContext';
 import { collection, onSnapshot, query, orderBy, where, limit, startAfter } from 'firebase/firestore';
+import { formatMoney } from '../funciones/convertirAMoneda';
 
 const useObtenerGastos = () => {
     const {usuario} = useAuth();
     const [gastos, cambiarGastos] = useState([]);
     const [ultimoGasto, cambiarUltimoGasto] = useState(null);
     const [hayMasPorCargar, cambiarHayMasPorCargar] = useState(false);
+
+    
 
     const obtenerMasGastos = () =>{
         const consulta = query(
@@ -24,7 +27,9 @@ const useObtenerGastos = () => {
                 cambiarUltimoGasto(snapshot.docs[snapshot.docs.length -1]); 
                 
                 cambiarGastos(gastos.concat(snapshot.docs.map((gasto)=>{
-                    return {...gasto.data(), id:gasto.id}
+                const cantidad = formatMoney(gasto.data().cantidad);
+
+                    return {...gasto.data(), id:gasto.id, cantidad }
                 })))
             } else{
                 cambiarHayMasPorCargar(false)
@@ -49,7 +54,8 @@ const useObtenerGastos = () => {
             }
             
             cambiarGastos(snapshot.docs.map((gasto) => {
-                return {...gasto.data(), id:gasto.id}
+                const cantidad = formatMoney(gasto.data().cantidad);
+                return {...gasto.data(), id:gasto.id, cantidad}
           
             }))
         })

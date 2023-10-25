@@ -8,7 +8,7 @@ const useTotalDelMes = () => useContext(TotalGastadoContext)
 const TotalGastadoProvider = ({children}) => {
     const [total , cambiarTotal] = useState(0);
     const gastos = useObtenerGastosDelMes();
-
+console.log(gastos)
     useEffect(()=>{
         let acumulado = 0;
         gastos.forEach((gasto)=>{
