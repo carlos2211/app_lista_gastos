@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from '../elementos/theme';
 import { useTotalDelMes } from '../contextos/totalGastadoEnElMesContext';
+import useFormatLocalMoney from '../hooks/useFormatLocalMoney';
+
 
 const BarraTotal = styled.div`
     background: ${theme.verde};
@@ -22,12 +24,14 @@ const BarraTotal = styled.div`
 `;
 
 const BarraTotalGastado = () => {
+    const pais = "Chile"
     const {total} = useTotalDelMes();
-
+    const {formatedMoney,formatedMoneyEUR} = useFormatLocalMoney(total)
     return ( 
         <BarraTotal>
             <p>Total gastado en el mes :</p>
-            <p>${total}</p>
+            <p>{pais === "Chile" ? formatedMoney :formatedMoneyEUR }</p>
+          
         </BarraTotal>
      );
 }
